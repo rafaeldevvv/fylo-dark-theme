@@ -8,8 +8,15 @@
 body {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 14px;
+  background-image: url("../images/bg-curvy-mobile.svg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: hsl(218, 28%, 13%);
+  color: hsl(0, 0%, 100%);
 }
 
+/* general styling for elements */
 h1,
 h2,
 h3,
@@ -17,8 +24,306 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", Helvetica, sans-serif;
+  line-height: 1.5;
 }
 
 ul {
   list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+p {
+  line-height: 1.6em;
+}
+
+address {
+  font-style: normal;
+}
+
+/* utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.section-padding {
+  padding-inline: 2em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.field-reset, .btn, .field {
+  outline: 0;
+  border: 0;
+  background: none;
+  display: inline-block;
+}
+
+.field {
+  border-radius: 30px;
+  padding: 1.1em 1.5em;
+  width: 100%;
+  max-width: 100%;
+}
+
+.primary-field {
+  background-color: white;
+}
+
+.primary-field::-moz-placeholder {
+  color: hsl(0, 0%, 75%);
+}
+
+.primary-field::placeholder {
+  color: hsl(0, 0%, 75%);
+}
+
+.btn {
+  padding: 1.1em;
+  width: 15em;
+  border-radius: 30px;
+  max-width: 100%;
+  text-align: center;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.primary-btn {
+  background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
+  color: white;
+}
+
+.special-link {
+  display: inline-block;
+  color: hsl(176, 68%, 64%);
+  padding-block: 0.4em;
+  border-bottom: 1px solid hsl(176, 68%, 64%);
+  font-size: 0.94em;
+}
+.special-link .icon {
+  vertical-align: middle;
+}
+
+.separate-space-1 > * + * {
+  margin-top: 0.6em;
+}
+
+.separate-space-2 > * + * {
+  margin-top: 1.8em;
+}
+
+.gray-text, .footer-list a {
+  color: hsl(0, 0%, 80%);
+}
+
+/* ############################ header and nav ################################ */
+header {
+  padding-block: 2em;
+  background-color: hsl(217, 28%, 15%);
+}
+header .logo {
+  width: 85px;
+}
+header .container {
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  gap: 1.5em;
+}
+nav ul a {
+  color: hsl(0, 0%, 75%);
+  display: block;
+  padding-block: 0.4em;
+  transition-property: color, -webkit-text-decoration;
+  transition-property: color, text-decoration;
+  transition-property: color, text-decoration, -webkit-text-decoration;
+  transition-duration: 0.3s;
+}
+nav ul a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* ################################ intro ################################ */
+#intro {
+  padding-block: 2.3em;
+  background-image: url("../images/bg-curvy-mobile.svg"), linear-gradient(to top, hsl(218, 28%, 13%) 45%, hsl(217, 28%, 15%) 45%);
+  background-repeat: no-repeat;
+  background-position: center 45%;
+}
+#intro h1 {
+  font-size: 1.8em;
+}
+
+/* ################################ features ################################ */
+#features {
+  padding-block: 7em;
+}
+#features .container {
+  gap: 5em;
+}
+#features h3 {
+  font-size: 1.3em;
+}
+
+/* ################################ stay productive ################################ */
+#stay-productive {
+  padding-block: 4em;
+}
+#stay-productive h2 {
+  font-size: 1.3em;
+}
+
+/* ################################ comments ################################ */
+#comments {
+  padding-block: 8em;
+}
+#comments .container {
+  display: grid;
+  gap: 3em;
+  padding-block: 19px;
+  background-image: url("../images/bg-quotes.png");
+  background-repeat: no-repeat;
+  background-size: 25px auto;
+  background-position: 5px top;
+}
+
+.comment {
+  background-color: hsl(219, 30%, 18%);
+  padding: 2em;
+  border-radius: 6px;
+}
+.comment .message {
+  font-size: 0.9em;
+  color: hsl(0, 0%, 75%);
+  margin-bottom: 1.2em;
+}
+.comment .author {
+  display: grid;
+  grid-template-columns: 1.5fr 10fr;
+  align-items: center;
+  gap: 0.8em;
+}
+.comment .author .profile-picture {
+  border-radius: 50%;
+}
+.comment .author .name {
+  font-size: 0.9em;
+}
+.comment .author .profession {
+  color: hsl(0, 0%, 75%);
+  font-size: 0.7em;
+}
+
+/* ################################ get access ################################ */
+#get-access {
+  padding-block: 2em;
+  background: linear-gradient(to bottom, hsl(218, 28%, 13%) 50%, hsl(216, 53%, 9%) 50%);
+}
+#get-access .box {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: hsl(217, 28%, 15%);
+  padding: 2.6em 2em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+#get-access h2 {
+  font-size: 1.2em;
+}
+#get-access form {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+#get-access .field, #get-access .btn {
+  font-size: 1em;
+  width: 100%;
+}
+
+/* ################################ footer ################################ */
+footer {
+  background-color: hsl(216, 53%, 9%);
+  padding-block: 3em;
+}
+footer .logo {
+  width: 200px;
+}
+footer .container {
+  flex-direction: column;
+  gap: 2em;
+}
+footer .middle {
+  gap: 5em;
+  flex-direction: column;
+}
+footer .contact {
+  gap: 0.8em;
+}
+footer .contact .info {
+  grid-template-columns: 1fr 9fr;
+  align-items: start;
+}
+footer .contact .info img:not(.location) {
+  align-self: center;
+  justify-self: start;
+}
+footer .lists ul:first-child {
+  margin-bottom: 3em;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.socials {
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+.socials a {
+  display: block;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30px;
+  aspect-ratio: 1;
+}
+.socials .fa {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.attribution {
+  text-align: center;
+}
+.attribution a {
+  color: hsl(176, 68%, 64%);
+}
+.attribution a:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

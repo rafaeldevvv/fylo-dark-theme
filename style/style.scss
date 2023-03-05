@@ -9,6 +9,7 @@ $cyan: hsl(176, 68%, 64%);
 $blue: hsl(198, 60%, 50%);
 $light-red: hsl(0, 100%, 63%);
 $white: hsl(0, 0%, 100%);
+$gray: hsl(0,0%, 75%); 
 
 * {
   padding: 0;
@@ -19,8 +20,16 @@ $white: hsl(0, 0%, 100%);
 body {
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 14px;
+  
+  background-image: url('../images/bg-curvy-mobile.svg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $dark-blue-main;
+  color: $white;
 }
 
+/* general styling for elements */
 h1,
 h2,
 h3,
@@ -28,8 +37,344 @@ h4,
 h5,
 h6 {
   font-family: "Raleway", Helvetica, sans-serif;
+  line-height: 1.5;
 }
 
 ul {
    list-style: none;
+}
+
+img {
+   max-width: 100%;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+
+p {
+   line-height: 1.6em;
+}
+
+address{
+   font-style: normal;
+}
+
+/* utility classes */
+.container {
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.flex {
+   display: flex;
+}
+.grid {
+   display: grid;
+}
+
+.section-padding{
+   padding-inline: 2em;
+}
+
+.text-center {
+   text-align: center;
+}
+
+.field-reset {
+   outline: 0;
+   border: 0;
+   background: none;
+   display: inline-block;
+}
+.field{
+   @extend .field-reset;
+   border-radius: 30px;
+   padding: 1.1em 1.5em;
+   width: 100%;
+   max-width: 100%;
+}
+.primary-field {
+   background-color: white;
+}
+.primary-field::placeholder {
+   color: $gray;
+}
+
+.btn {
+   @extend .field-reset;
+   padding: 1.1em;
+   width: 15em;
+   border-radius: 30px;
+   max-width: 100%;
+   
+   text-align: center;
+   font-family: "Raleway";
+   font-weight: 700;
+   font-size: 1.2em;
+}
+.primary-btn {
+   background: linear-gradient(to right, $cyan, $blue);
+   color: white;
+}
+
+.special-link {
+   display: inline-block;
+   color: $cyan;
+   padding-block: .4em;
+   border-bottom: 1px solid $cyan;
+   font-size: .94em;
+
+   .icon {
+      vertical-align: middle;
+   }
+}
+
+
+.separate-space-1 {
+   > * + * {
+      margin-top: .6em;
+   }
+}
+.separate-space-2 {
+   > * + * {
+      margin-top: 1.8em;
+   }
+}
+
+.gray-text {
+   color: hsl(0,0%,80%);
+}
+
+/* ############################ header and nav ################################ */
+header {
+   padding-block: 2em;
+   background-color: $dark-blue-intro;
+
+   .logo {
+      width: 85px;
+   }
+
+   .container {
+      justify-content: space-between;
+      align-items: center;
+   }
+}
+
+nav {
+   ul {
+      gap: 1.5em; 
+
+      a {
+         color: $gray;
+         display: block;
+         padding-block: .4em;
+
+         transition-property: color, text-decoration;
+         transition-duration: .3s;
+      }
+
+      a:hover {
+         text-decoration: underline;
+         color: white;
+      }
+   }
+}
+
+/* ################################ intro ################################ */
+#intro {
+   padding-block: 2.3em;
+   background-image: 
+     url("../images/bg-curvy-mobile.svg"), 
+     linear-gradient(to top, $dark-blue-main 45%, $dark-blue-intro 45%);
+   background-repeat: no-repeat;
+   background-position: center 45%;
+
+   h1 {
+      font-size: 1.8em;
+   }
+}
+
+/* ################################ features ################################ */
+#features {
+   padding-block: 7em;
+   
+   .container {
+      gap: 5em;
+   }
+
+   h3 {
+      font-size: 1.3em;
+   }
+}
+
+/* ################################ stay productive ################################ */
+#stay-productive {
+   padding-block: 4em;
+
+   h2 {
+      font-size: 1.3em;
+   }
+}
+
+/* ################################ comments ################################ */
+#comments {
+   padding-block: 8em;
+
+   .container {
+      display: grid;
+      gap: 3em;
+      padding-block: 19px;
+
+      background-image: url('../images/bg-quotes.png');
+      background-repeat: no-repeat;
+      background-size: 25px auto;
+      background-position:  5px top;
+   }
+}
+.comment {
+   background-color: $dark-blue-testimonials;
+   padding: 2em;
+   border-radius: 6px;
+
+   .message {
+      font-size: .9em;
+      color: $gray;
+      margin-bottom: 1.2em;
+   }
+
+   .author {
+      display: grid;
+      grid-template-columns: 1.5fr 10fr;
+      align-items: center;
+      gap: 0.8em;
+
+      .profile-picture {
+         border-radius: 50%;
+      }
+
+      .name {
+         font-size: .9em;
+      }
+
+      .profession {
+         color: $gray;
+         font-size: .7em;
+      }
+   }  
+}
+
+/* ################################ get access ################################ */
+#get-access {
+   padding-block: 2em;
+   background: linear-gradient(to bottom, $dark-blue-main 50%, $dark-blue-footer 50%);
+
+   .box {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: $dark-blue-intro;
+      padding: 2.6em 2em;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+      border-radius: 10px;
+   }
+
+   h2 {
+      font-size: 1.2em;
+   }
+
+   form {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+   }
+
+   .field, .btn {
+      font-size: 1em;
+      width: 100%;
+   }
+}
+
+/* ################################ footer ################################ */
+footer {
+   background-color: $dark-blue-footer;
+   padding-block: 3em;
+
+   .logo {
+      width: 200px;
+   }
+
+   .container {
+      flex-direction: column;
+      gap: 2em;
+   }
+
+   .middle {
+      gap: 5em;
+      flex-direction: column;
+   }
+
+   .contact {
+      gap: .8em;
+
+      .info {
+         grid-template-columns: 1fr 9fr;
+         align-items: start;
+
+         img:not(.location) {
+            align-self: center;
+            justify-self: start;
+         }
+      }
+   }
+
+   .lists {
+      ul:first-child {
+         margin-bottom: 3em;
+      }
+   }
+}
+
+.footer-list {
+   display: flex;
+   flex-direction: column;
+   gap: .5em;
+
+   a {
+      @extend .gray-text;
+   }
+}
+
+.socials {
+   display: flex;
+   gap: .5em;
+   justify-content: center;
+
+   a {
+      display: block;
+      position: relative;
+      border: 1px solid white;
+      border-radius: 50%;
+
+      width: 30px;
+      aspect-ratio: 1;
+   }
+
+   .fa {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+   }
+}
+
+.attribution {
+   text-align: center;
+
+   a {
+      color: $cyan;
+   }
+   a:hover {
+      text-decoration: underline;
+   }
 }

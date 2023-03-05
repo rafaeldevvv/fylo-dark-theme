@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <script src="https://kit.fontawesome.com/134d9c6f51.js" crossorigin="anonymous"></script>
   
   <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <img src="./images/logo.svg" alt="Logo">
+  <header class="section-padding">
+    <div class="container flex">
+      <img src="./images/logo.svg" alt="Logo" class="logo">
       <nav>
-        <ul>
+        <ul class="flex">
           <li>
             <a href="#">
               Features
@@ -38,13 +38,13 @@
   <main>
 
     <!-- ####intro#### -->
-    <section id="intro">
-      <div class="container">
+    <section id="intro" class="section-padding text-center">
+      <div class="container separate-space-2">
         <img src="./images/illustration-intro.png" alt="">
         <h1>
           All your files in one secure location, accessible anywhere.
         </h1>
-        <p>
+        <p class="gray-text">
           Fylo stores all your most important files in one secure location. Access them wherever 
           you need, share and collaborate with friends family, and co-workers.
         </p>
@@ -55,44 +55,44 @@
     </section>
 
     <!-- ####features#### -->
-    <section id="features">
-      <div class="container">
-        <article>
+    <section id="features" class="section-padding">
+      <div class="container grid">
+        <article class="text-center separate-space-1">
           <img src="./images/icon-access-anywhere.svg" alt="Access Icon">
           <h3>
             Access your files, anywhere
           </h3>
-          <p>
+          <p class="gray-text">
             The ability to use a smartphone, tablet, or computer to access your account means your 
             files follow you everywhere.
           </p>
         </article>
-        <article>
+        <article class="text-center separate-space-1">
           <img src="./images/icon-security.svg" alt="Security Icon">
           <h3>
             Security you can trust
           </h3>
-          <p>
+          <p class="gray-text">
             2-factor authentication and user-controlled encryption are just a couple of the security 
             features we allow to help secure your files.
           </p>
         </article>
-        <article>
+        <article class="text-center separate-space-1">
           <img src="./images/icon-collaboration.svg" alt="Collaboration Icon">
           <h3>
             Real-time collaboration
           </h3>
-          <p>
+          <p class="gray-text">
             Securely share files and folders with friends, family and colleagues for live collaboration. 
             No email attachments required.
           </p>
         </article>
-        <article>
+        <article class="text-center separate-space-1">
           <img src="./images/icon-any-file.svg" alt="File Icon">
           <h3>
             Store any type of file
           </h3>
-          <p>
+          <p class="gray-text">
             Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all 
             file types to be securely stored and shared.
           </p>
@@ -101,31 +101,31 @@
     </section>
 
     <!-- ####stay productive#### -->
-    <section id="stay-productive">
+    <section id="stay-productive" class="section-padding">
       <div class="container">
         <img src="./images/illustration-stay-productive.png" alt="Productivity Image">
-        <div class="content">
+        <div class="content separate-space-1">
           <h2>
             Stay productive, wherever you are
           </h2>
-          <p>
+          <p class="gray-text">
             Never let location be an issue when accessing your files. Fylo has you covered for all of your file 
             storage needs.
           </p>
-          <p>
+          <p class="gray-text">
             Securely share files and folders with friends, family and colleagues for live collaboration. No email 
             attachments required.
           </p>
           <a href="#" class="special-link">
             See how Fylo works
-            <img src="./images/icon-arrow.svg" alt="Arrow Icon">
+            <img src="./images/icon-arrow.svg" alt="Arrow Icon" class="icon">
           </a>
         </div>
       </div>
     </section>
 
     <!-- ####comments#### -->
-    <section id="comments">
+    <section id="comments" class="section-padding">
       <div class="container">
         <article class="comment">
           <p class="message">
@@ -133,9 +133,7 @@
             become a well-oiled collaboration machine.
           </p>
           <div class="author">
-            <div class="profile">
-              <img src="./images/profile-1.jpg" alt="Satish Patel's profile picture">
-            </div>
+            <img src="./images/profile-1.jpg" alt="Satish Patel's profile picture" class="profile-picture">
             <div class="desc">
               <h3 class="name">
                 Satish Patel
@@ -153,9 +151,7 @@
             become a well-oiled collaboration machine.
           </p>
           <div class="author">
-            <div class="profile">
-              <img src="./images/profile-2.jpg" alt="Satish Patel's profile picture">
-            </div>
+            <img src="./images/profile-2.jpg" alt="Satish Patel's profile picture" class="profile-picture">
             <div class="desc">
               <h3 class="name">
                 Bruce McKenzie
@@ -173,9 +169,7 @@
             become a well-oiled collaboration machine.
           </p>
           <div class="author">
-            <div class="profile">
-              <img src="./images/profile-3.jpg" alt="Satish Patel's profile picture">
-            </div>
+            <img src="./images/profile-3.jpg" alt="Satish Patel's profile picture" class="profile-picture">
             <div class="desc">
               <h3 class="name">
                 Iva Boyd
@@ -190,17 +184,18 @@
     </section>
 
     <!-- ####get access#### -->
-    <section id="get-access">
-      <div class="box">
+    <section id="get-access" class="section-padding text-center">
+      <div class="box separate-space-2">
         <h2>
           Get early access today
         </h2>
-        <p>
+        <p class="gray-text">
           It only takes a minute to sign up and our free starter tier is extremely generous. If you have any 
           questions, our support team would be happy to help you.
         </p>
         <form>
-          <input type="email" name="email" id="inEmail" placeholder="email@example.com">
+          <input type="email" name="email" id="inEmail" placeholder="email@example.com" 
+          class="field primary-field" />
           <button type="submit" class="btn primary-btn"> 
             Get Started For Free
           </button>
@@ -210,26 +205,25 @@
   </main>
 
   <!-- ####footer#### -->
-  <footer>
-    <div class="container">
-      <img src="./images/logo.svg" alt="Logo">
+  <footer class="section-padding">
+    <div class="container flex">
+      <img src="./images/logo.svg" alt="Logo" class="logo">
 
-      <div class="info">
-        <div class="flex">
-          <img src="./images/icon-location.svg" alt="Location Icon">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-            dolore magna aliqua
-          </p>
-        </div>
-
+      <div class="middle flex gray-text">
         <!-- contact -->
-        <ul>
-          <li class="flex">
+        <ul class="grid contact">
+          <li class="grid info">
+            <img src="./images/icon-location.svg" alt="Location Icon" class="location">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+              dolore magna aliqua
+            </p>
+          </li>
+          <li class="grid info">
             <img src="./images/icon-phone.svg" alt="Phone Icon">
             +1-543-123-4567
           </li>
-          <li class="flex">
+          <li class="grid info">
             <img src="./images/icon-email.svg" alt="Email Icon">
             <address>
               example@fylo.com
@@ -237,42 +231,49 @@
           </li>
         </ul>
 
-        <!-- first -->
-        <ul>
-          <li>
-            <a href="#">
-              About Us
-            </a>
-            <a href="#">
-              Jobs
-            </a>
-            <a href="#">
-              Press
-            </a>
-            <a href="#">
-              Blog
-            </a>
-          </li>
-        </ul>
-
-        <!-- second -->
-        <ul>
-          <li>
-            <a href="#">
-              Contact Us
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Terms
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Privacy
-            </a>
-          </li>
-        </ul>
+        <!-- lists -->
+        <div class="lists">
+          <ul class="footer-list">
+            <li>
+              <a href="#">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Jobs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Press
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Blog
+              </a>
+            </li>
+          </ul>
+  
+          <ul class="footer-list">
+            <li>
+              <a href="#">
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Terms
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Privacy
+              </a>
+            </li>
+          </ul>
+        </div>
 
         <!-- socials -->
         <ul class="socials">
@@ -293,11 +294,11 @@
           </li>
         </ul>
       </div>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/rafaeldevvv">Rafael Maia</a>.
+      </p>
     </div>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
   </footer>
 </body>
 </html>
