@@ -27,6 +27,8 @@ body {
   background-size: cover;
   background-color: $dark-blue-main;
   color: $white;
+
+  overflow-x: hidden;
 }
 
 /* general styling for elements */
@@ -91,7 +93,7 @@ address{
 .field{
    @extend .field-reset;
    border-radius: 30px;
-   padding: 1.1em 1.5em;
+   padding: 1.3em 1.5em;
    width: 100%;
    max-width: 100%;
 }
@@ -104,19 +106,26 @@ address{
 
 .btn {
    @extend .field-reset;
-   padding: 1.1em;
-   width: 15em;
+   padding: 1.3em;
+   width: 17em;
    border-radius: 30px;
    max-width: 100%;
    
    text-align: center;
    font-family: "Raleway";
    font-weight: 700;
-   font-size: 1.2em;
+   font-size: .9em;
+
+   cursor: pointer;
+   transition-property: color, filter, background;
+   transition-duration: .2s;
 }
 .primary-btn {
    background: linear-gradient(to right, $cyan, $blue);
    color: white;
+}
+.primary-btn:hover {
+   filter: brightness(1.2);
 }
 
 .special-link {
@@ -126,9 +135,15 @@ address{
    border-bottom: 1px solid $cyan;
    font-size: .94em;
 
+   transition-property: filter, color;
+   transition-duration: .2s;
+
    .icon {
       vertical-align: middle;
    }
+}
+.special-link:hover {
+   filter: grayscale(100%);
 }
 
 
@@ -153,23 +168,25 @@ header {
    background-color: $dark-blue-intro;
 
    .logo {
-      width: 85px;
+      width: 80px;
    }
 
    .container {
       justify-content: space-between;
       align-items: center;
+      gap: .5em;
    }
 }
 
 nav {
    ul {
-      gap: 1.5em; 
-
+      gap: 1.5em;
       a {
          color: $gray;
          display: block;
          padding-block: .4em;
+         font-size: .9em;
+         white-space: nowrap;
 
          transition-property: color, text-decoration;
          transition-duration: .3s;
@@ -246,12 +263,13 @@ nav {
 
    .author {
       display: grid;
-      grid-template-columns: 1.5fr 10fr;
+      grid-template-columns: max-content max-content;
       align-items: center;
       gap: 0.8em;
 
       .profile-picture {
          border-radius: 50%;
+         max-width: 40px;
       }
 
       .name {
@@ -290,7 +308,6 @@ nav {
    }
 
    .field, .btn {
-      font-size: 1em;
       width: 100%;
    }
 }
@@ -342,6 +359,10 @@ footer {
 
    a {
       @extend .gray-text;
+      transition: color .2s;
+   }
+   a:hover {
+      color: white;
    }
 }
 
@@ -358,6 +379,14 @@ footer {
 
       width: 30px;
       aspect-ratio: 1;
+
+      transition-property: color, border-color;
+      transition-duration: .25s;
+   }
+
+   a:hover {
+      color: $cyan;
+      border-color: $cyan;
    }
 
    .fa {

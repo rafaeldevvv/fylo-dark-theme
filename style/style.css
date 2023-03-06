@@ -14,6 +14,7 @@ body {
   background-size: cover;
   background-color: hsl(218, 28%, 13%);
   color: hsl(0, 0%, 100%);
+  overflow-x: hidden;
 }
 
 /* general styling for elements */
@@ -79,7 +80,7 @@ address {
 
 .field {
   border-radius: 30px;
-  padding: 1.1em 1.5em;
+  padding: 1.3em 1.5em;
   width: 100%;
   max-width: 100%;
 }
@@ -97,19 +98,26 @@ address {
 }
 
 .btn {
-  padding: 1.1em;
-  width: 15em;
+  padding: 1.3em;
+  width: 17em;
   border-radius: 30px;
   max-width: 100%;
   text-align: center;
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition-property: color, filter, background;
+  transition-duration: 0.2s;
 }
 
 .primary-btn {
   background: linear-gradient(to right, hsl(176, 68%, 64%), hsl(198, 60%, 50%));
   color: white;
+}
+
+.primary-btn:hover {
+  filter: brightness(1.2);
 }
 
 .special-link {
@@ -118,9 +126,15 @@ address {
   padding-block: 0.4em;
   border-bottom: 1px solid hsl(176, 68%, 64%);
   font-size: 0.94em;
+  transition-property: filter, color;
+  transition-duration: 0.2s;
 }
 .special-link .icon {
   vertical-align: middle;
+}
+
+.special-link:hover {
+  filter: grayscale(100%);
 }
 
 .separate-space-1 > * + * {
@@ -141,11 +155,12 @@ header {
   background-color: hsl(217, 28%, 15%);
 }
 header .logo {
-  width: 85px;
+  width: 80px;
 }
 header .container {
   justify-content: space-between;
   align-items: center;
+  gap: 0.5em;
 }
 
 nav ul {
@@ -155,6 +170,8 @@ nav ul a {
   color: hsl(0, 0%, 75%);
   display: block;
   padding-block: 0.4em;
+  font-size: 0.9em;
+  white-space: nowrap;
   transition-property: color, -webkit-text-decoration;
   transition-property: color, text-decoration;
   transition-property: color, text-decoration, -webkit-text-decoration;
@@ -221,12 +238,13 @@ nav ul a:hover {
 }
 .comment .author {
   display: grid;
-  grid-template-columns: 1.5fr 10fr;
+  grid-template-columns: max-content max-content;
   align-items: center;
   gap: 0.8em;
 }
 .comment .author .profile-picture {
   border-radius: 50%;
+  max-width: 40px;
 }
 .comment .author .name {
   font-size: 0.9em;
@@ -258,7 +276,6 @@ nav ul a:hover {
   gap: 2em;
 }
 #get-access .field, #get-access .btn {
-  font-size: 1em;
   width: 100%;
 }
 
@@ -298,6 +315,13 @@ footer .lists ul:first-child {
   flex-direction: column;
   gap: 0.5em;
 }
+.footer-list a {
+  transition: color 0.2s;
+}
+.footer-list a:hover {
+  color: white;
+}
+
 .socials {
   display: flex;
   gap: 0.5em;
@@ -310,6 +334,12 @@ footer .lists ul:first-child {
   border-radius: 50%;
   width: 30px;
   aspect-ratio: 1;
+  transition-property: color, border-color;
+  transition-duration: 0.25s;
+}
+.socials a:hover {
+  color: hsl(176, 68%, 64%);
+  border-color: hsl(176, 68%, 64%);
 }
 .socials .fa {
   position: absolute;
