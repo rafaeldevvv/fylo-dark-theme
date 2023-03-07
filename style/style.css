@@ -64,7 +64,7 @@ address {
 }
 
 .section-padding {
-  padding-inline: 2em;
+  padding-inline: min(6vw, 4em);
 }
 
 .text-center {
@@ -146,7 +146,7 @@ address {
 }
 
 .gray-text, .footer-list a {
-  color: hsl(0, 0%, 80%);
+  color: hsl(0, 0%, 70%);
 }
 
 /* ############################ header and nav ################################ */
@@ -191,6 +191,13 @@ nav ul a:hover {
 }
 #intro h1 {
   font-size: 1.8em;
+  max-width: 600px;
+}
+#intro p {
+  max-width: 500px;
+}
+#intro h1, #intro p {
+  margin-inline: auto;
 }
 
 /* ################################ features ################################ */
@@ -199,9 +206,13 @@ nav ul a:hover {
 }
 #features .container {
   gap: 5em;
+  max-width: 800px;
 }
 #features h3 {
   font-size: 1.3em;
+}
+#features .img-control {
+  height: 80px;
 }
 
 /* ################################ stay productive ################################ */
@@ -217,8 +228,10 @@ nav ul a:hover {
   padding-block: 8em;
 }
 #comments .container {
-  display: grid;
-  gap: 3em;
+  max-width: 1100px;
+  row-gap: 3em;
+  -moz-column-gap: min(2vw, 3em);
+       column-gap: min(2vw, 3em);
   padding-block: 19px;
   background-image: url("../images/bg-quotes.png");
   background-repeat: no-repeat;
@@ -260,7 +273,7 @@ nav ul a:hover {
   background: linear-gradient(to bottom, hsl(218, 28%, 13%) 50%, hsl(216, 53%, 9%) 50%);
 }
 #get-access .box {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   background-color: hsl(217, 28%, 15%);
   padding: 2.6em 2em;
@@ -271,7 +284,6 @@ nav ul a:hover {
   font-size: 1.2em;
 }
 #get-access form {
-  display: flex;
   flex-direction: column;
   gap: 2em;
 }
@@ -292,22 +304,29 @@ footer .container {
   gap: 2em;
 }
 footer .middle {
-  gap: 5em;
+  gap: 3em;
   flex-direction: column;
+  justify-content: space-between;
+}
+footer .location {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  max-width: 400px;
 }
 footer .contact {
-  gap: 0.8em;
+  gap: 1em;
+  flex-direction: column;
 }
 footer .contact .info {
-  grid-template-columns: 1fr 9fr;
-  align-items: start;
+  align-items: center;
+  gap: 0.6em;
 }
-footer .contact .info img:not(.location) {
+footer .contact .info > * {
+  flex-shrink: 0;
+}
+footer .contact .info img {
   align-self: center;
   justify-self: start;
-}
-footer .lists ul:first-child {
-  margin-bottom: 3em;
 }
 
 .footer-list {
@@ -349,6 +368,7 @@ footer .lists ul:first-child {
 }
 
 .attribution {
+  margin-top: 3em;
   text-align: center;
 }
 .attribution a {
@@ -356,4 +376,73 @@ footer .lists ul:first-child {
 }
 .attribution a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 45em) {
+  .separate-space-1-dk > * + * {
+    margin-top: 1.2em;
+  }
+  header {
+    padding-block: 4em;
+  }
+  header .logo {
+    width: 140px;
+  }
+  nav ul {
+    gap: 3em;
+  }
+  #intro {
+    background-image: url("../images/bg-curvy-desktop.svg");
+    background-color: hsl(217, 28%, 15%);
+    background-position: center 100%;
+  }
+  #intro h1 {
+    font-size: 2.3em;
+  }
+  #intro p {
+    font-size: 1.2em;
+  }
+  #features .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+  #stay-productive .container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 4em;
+  }
+  #stay-productive h2 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    max-width: 55%;
+  }
+  #comments .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #get-access .box {
+    padding-inline: 5em;
+  }
+  #get-access form {
+    flex-direction: row;
+  }
+  #get-access .field, #get-access .btn {
+    width: auto;
+  }
+  #get-access .field {
+    flex-grow: 3;
+  }
+  #get-access .btn {
+    flex-grow: 1;
+  }
+  #get-access h2 {
+    font-size: 2.3em;
+  }
+  footer .middle {
+    flex-direction: row;
+  }
+  footer .middle > * {
+    flex-grow: 1;
+  }
 }/*# sourceMappingURL=style.css.map */
