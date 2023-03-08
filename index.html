@@ -116,6 +116,7 @@
           <img
             src="./images/illustration-stay-productive.png"
             alt="Productivity Image"
+            class="main-img"
           />
           <div class="content separate-space-1 separate-space-1-dk">
             <h2>Stay productive, wherever you are</h2>
@@ -128,7 +129,9 @@
               colleagues for live collaboration. No email attachments required.
             </p>
             <a href="#" class="special-link">
-              See how Fylo works
+              <span>
+                See how Fylo works
+              </span>
               <img
                 src="./images/icon-arrow.svg"
                 alt="Arrow Icon"
@@ -203,6 +206,8 @@
 
       <!-- ####get access#### -->
       <section id="get-access" class="section-padding text-center">
+        <div class="back main-color"></div>
+        <div class="back footer-color"></div>
         <div class="box separate-space-2">
           <h2>Get early access today</h2>
           <p class="gray-text">
@@ -210,17 +215,19 @@
             extremely generous. If you have any questions, our support team
             would be happy to help you.
           </p>
-          <form class="flex">
-            <input
-              type="email"
-              name="email"
-              id="inEmail"
-              placeholder="email@example.com"
-              class="field primary-field"
-            />
-            <button type="submit" class="btn primary-btn">
-              Get Started For Free
-            </button>
+          <form novalidate>
+            <div class="inner flex">
+              <input
+                type="email"
+                name="email"
+                placeholder="email@example.com"
+                class="field primary-field"
+              />
+              <button type="submit" class="btn primary-btn">
+                Get Started For Free
+              </button>
+            </div>
+            <p class="red-text error">Please enter a valid email address</p>
           </form>
         </div>
       </section>
@@ -233,8 +240,8 @@
 
         <div class="middle flex gray-text">
           <!-- contact -->
-          <div class="grid location">
-            <img src="./images/icon-location.svg" alt="Location Icon" />
+          <div class="flex location info">
+            <img src="./images/icon-location.svg" alt="Location Icon" class="icon"/>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -242,12 +249,14 @@
           </div>
 
           <ul class="flex contact">
-            <li class="flex info phone">
-              <img src="./images/icon-phone.svg" alt="Phone Icon" />
-              +1-543-123-4567
+            <li class="flex info">
+              <img src="./images/icon-phone.svg" alt="Phone Icon" class="icon" />
+              <span>
+                +1-543-123-4567
+              </span>
             </li>
-            <li class="flex info email">
-              <img src="./images/icon-email.svg" alt="Email Icon" />
+            <li class="flex info">
+              <img src="./images/icon-email.svg" alt="Email Icon" class="icon" />
               <address>example@fylo.com</address>
             </li>
           </ul>
@@ -293,7 +302,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="https://www.instagram.com/rafaeldevvv">
                 <i class="fa fa-instagram"></i>
               </a>
             </li>

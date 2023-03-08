@@ -65,7 +65,7 @@ address{
 
 /* utility classes */
 .container {
-   max-width: 1200px;
+   max-width: 1250px;
    margin: 0 auto;
 }
 
@@ -107,14 +107,14 @@ address{
 .btn {
    @extend .field-reset;
    padding: 1.3em;
-   width: 17em;
+   width: 18em;
    border-radius: 30px;
    max-width: 100%;
    
    text-align: center;
    font-family: "Raleway";
    font-weight: 700;
-   font-size: .9em;
+   font-size: 1em;
 
    cursor: pointer;
    transition-property: color, filter, background;
@@ -162,10 +162,16 @@ address{
    color: hsl(0,0%,70%);
 }
 
+.red-text {
+   color: $light-red;
+}
+
 /* ############################ header and nav ################################ */
 header {
    padding-block: 2em;
-   background-color: $dark-blue-intro;
+   position: absolute;
+   inset: 0 0 auto 0;
+   z-index: 9999;
 
    .logo {
       width: 80px;
@@ -180,7 +186,8 @@ header {
 
 nav {
    ul {
-      gap: 1.5em;
+      gap: min(5vw, 3em);
+
       a {
          color: $gray;
          display: block;
@@ -201,7 +208,8 @@ nav {
 
 /* ################################ intro ################################ */
 #intro {
-   padding-block: 2.3em;
+   padding-block-start: 8em;
+   padding-block-end: 2.3em;
    background-image: 
      url("../images/bg-curvy-mobile.svg"), 
      linear-gradient(to top, $dark-blue-main 45%, $dark-blue-intro 45%);
@@ -210,11 +218,11 @@ nav {
 
    h1 {
       font-size: 1.8em;
-      max-width: 600px;
+      max-width: 700px;
    }
 
    p {
-      max-width: 500px;
+      max-width: 550px;
    }
    
    h1, p {
@@ -227,12 +235,17 @@ nav {
    padding-block: 7em;
    
    .container {
-      gap: 5em;
+      gap: 9em;
       max-width: 800px;
    }
 
    h3 {
       font-size: 1.3em;
+   }
+
+   p {
+      max-width: 500px;
+      margin-inline: auto;
    }
 
    .img-control {
@@ -246,6 +259,10 @@ nav {
 
    h2 {
       font-size: 1.3em;
+   }
+
+   .main-img {
+      margin-bottom: 3em;
    }
 }
 
@@ -302,7 +319,22 @@ nav {
 /* ################################ get access ################################ */
 #get-access {
    padding-block: 2em;
-   background: linear-gradient(to bottom, $dark-blue-main 50%, $dark-blue-footer 50%);
+   position: relative;
+
+   .back {
+      position: absolute;
+      z-index: -9999;
+      pointer-events: none;
+   }
+
+   .main-color {
+      inset: 0 0 50% 0;
+      background-color: $dark-blue-main;
+   }
+   .footer-color {
+      inset: 50% 0 0 0;
+      background-color: $dark-blue-footer;
+   }
 
    .box {
       max-width: 800px;
@@ -317,13 +349,29 @@ nav {
       font-size: 1.2em;
    }
 
-   form {
+   .inner {
       flex-direction: column;
       gap: 2em;
    }
 
+   .error {
+      text-align: left;
+      font-size: .8em;
+      font-weight: 700;
+
+      margin-block-start: .5em;
+      margin-inline-start: 2.5em;
+
+      display: none;
+   }
+
+   form:has(.field:invalid) .error {
+      display: block;
+   }
+
    .field, .btn {
       width: 100%;
+      font-size: 1em;
    }
 }
 
@@ -348,10 +396,18 @@ footer {
    }
 
    .location {
-      display: grid;
-      grid-template-columns: 1fr 9fr;
-
       max-width: 400px;
+   }
+
+   
+   .info {
+      display: flex;
+      gap: 1.5em;
+      align-items: start;
+
+      .icon {
+         flex: 0 0 10px;
+      }
    }
 
    .contact {
@@ -359,8 +415,9 @@ footer {
       flex-direction: column;
 
       .info {
-         align-items: center;
-         gap: .6em;
+         span {
+            white-space: nowrap;
+         }
 
          > * {
             flex-shrink: 0;
@@ -377,7 +434,8 @@ footer {
 .footer-list {
    display: flex;
    flex-direction: column;
-   gap: .5em;
+   gap: 1em;
+   white-space: nowrap;
 
    a {
       @extend .gray-text;
@@ -431,7 +489,7 @@ footer {
    }
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
    .separate-space-1-dk {
       > * + * {
          margin-top: 1.2em;
@@ -446,24 +504,19 @@ footer {
       }
    }  
 
-   nav {
-      ul {
-         gap: 3em;
-      }
-   }
-
    #intro {
       background-image: 
         url('../images/bg-curvy-desktop.svg');
       background-color: $dark-blue-intro;
       background-position: center 100%;
+      padding-block-start: 12em;
 
       h1 {
-         font-size: 2.3em;
+         font-size: 2.5em;
       }
 
       p {
-         font-size: 1.2em;
+         font-size: 1.25em;
       }
    }
 
@@ -487,7 +540,7 @@ footer {
       h2 {
          font-size: 2.5em;
          line-height: 1.2;
-         max-width: 55%;
+         max-width: max(70%, 10em);
       }
    }
 
@@ -502,7 +555,7 @@ footer {
          padding-inline: 5em;
       }
 
-      form {
+      .inner {
          flex-direction: row;
       }
 

@@ -51,7 +51,7 @@ address {
 
 /* utility classes */
 .container {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
@@ -99,13 +99,13 @@ address {
 
 .btn {
   padding: 1.3em;
-  width: 17em;
+  width: 18em;
   border-radius: 30px;
   max-width: 100%;
   text-align: center;
   font-family: "Raleway";
   font-weight: 700;
-  font-size: 0.9em;
+  font-size: 1em;
   cursor: pointer;
   transition-property: color, filter, background;
   transition-duration: 0.2s;
@@ -149,10 +149,16 @@ address {
   color: hsl(0, 0%, 70%);
 }
 
+.red-text {
+  color: hsl(0, 100%, 63%);
+}
+
 /* ############################ header and nav ################################ */
 header {
   padding-block: 2em;
-  background-color: hsl(217, 28%, 15%);
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 9999;
 }
 header .logo {
   width: 80px;
@@ -164,7 +170,7 @@ header .container {
 }
 
 nav ul {
-  gap: 1.5em;
+  gap: min(5vw, 3em);
 }
 nav ul a {
   color: hsl(0, 0%, 75%);
@@ -184,17 +190,20 @@ nav ul a:hover {
 
 /* ################################ intro ################################ */
 #intro {
-  padding-block: 2.3em;
+  -webkit-padding-before: 8em;
+          padding-block-start: 8em;
+  -webkit-padding-after: 2.3em;
+          padding-block-end: 2.3em;
   background-image: url("../images/bg-curvy-mobile.svg"), linear-gradient(to top, hsl(218, 28%, 13%) 45%, hsl(217, 28%, 15%) 45%);
   background-repeat: no-repeat;
   background-position: center 45%;
 }
 #intro h1 {
   font-size: 1.8em;
-  max-width: 600px;
+  max-width: 700px;
 }
 #intro p {
-  max-width: 500px;
+  max-width: 550px;
 }
 #intro h1, #intro p {
   margin-inline: auto;
@@ -205,11 +214,15 @@ nav ul a:hover {
   padding-block: 7em;
 }
 #features .container {
-  gap: 5em;
+  gap: 9em;
   max-width: 800px;
 }
 #features h3 {
   font-size: 1.3em;
+}
+#features p {
+  max-width: 500px;
+  margin-inline: auto;
 }
 #features .img-control {
   height: 80px;
@@ -221,6 +234,9 @@ nav ul a:hover {
 }
 #stay-productive h2 {
   font-size: 1.3em;
+}
+#stay-productive .main-img {
+  margin-bottom: 3em;
 }
 
 /* ################################ comments ################################ */
@@ -270,7 +286,20 @@ nav ul a:hover {
 /* ################################ get access ################################ */
 #get-access {
   padding-block: 2em;
-  background: linear-gradient(to bottom, hsl(218, 28%, 13%) 50%, hsl(216, 53%, 9%) 50%);
+  position: relative;
+}
+#get-access .back {
+  position: absolute;
+  z-index: -9999;
+  pointer-events: none;
+}
+#get-access .main-color {
+  inset: 0 0 50% 0;
+  background-color: hsl(218, 28%, 13%);
+}
+#get-access .footer-color {
+  inset: 50% 0 0 0;
+  background-color: hsl(216, 53%, 9%);
 }
 #get-access .box {
   max-width: 800px;
@@ -283,12 +312,26 @@ nav ul a:hover {
 #get-access h2 {
   font-size: 1.2em;
 }
-#get-access form {
+#get-access .inner {
   flex-direction: column;
   gap: 2em;
 }
+#get-access .error {
+  text-align: left;
+  font-size: 0.8em;
+  font-weight: 700;
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+  -webkit-margin-start: 2.5em;
+          margin-inline-start: 2.5em;
+  display: none;
+}
+#get-access form:has(.field:invalid) .error {
+  display: block;
+}
 #get-access .field, #get-access .btn {
   width: 100%;
+  font-size: 1em;
 }
 
 /* ################################ footer ################################ */
@@ -309,17 +352,22 @@ footer .middle {
   justify-content: space-between;
 }
 footer .location {
-  display: grid;
-  grid-template-columns: 1fr 9fr;
   max-width: 400px;
+}
+footer .info {
+  display: flex;
+  gap: 1.5em;
+  align-items: start;
+}
+footer .info .icon {
+  flex: 0 0 10px;
 }
 footer .contact {
   gap: 1em;
   flex-direction: column;
 }
-footer .contact .info {
-  align-items: center;
-  gap: 0.6em;
+footer .contact .info span {
+  white-space: nowrap;
 }
 footer .contact .info > * {
   flex-shrink: 0;
@@ -332,7 +380,8 @@ footer .contact .info img {
 .footer-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 1em;
+  white-space: nowrap;
 }
 .footer-list a {
   transition: color 0.2s;
@@ -378,7 +427,7 @@ footer .contact .info img {
   text-decoration: underline;
 }
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   .separate-space-1-dk > * + * {
     margin-top: 1.2em;
   }
@@ -388,19 +437,18 @@ footer .contact .info img {
   header .logo {
     width: 140px;
   }
-  nav ul {
-    gap: 3em;
-  }
   #intro {
     background-image: url("../images/bg-curvy-desktop.svg");
     background-color: hsl(217, 28%, 15%);
     background-position: center 100%;
+    -webkit-padding-before: 12em;
+            padding-block-start: 12em;
   }
   #intro h1 {
-    font-size: 2.3em;
+    font-size: 2.5em;
   }
   #intro p {
-    font-size: 1.2em;
+    font-size: 1.25em;
   }
   #features .container {
     grid-template-columns: repeat(2, 1fr);
@@ -416,7 +464,7 @@ footer .contact .info img {
   #stay-productive h2 {
     font-size: 2.5em;
     line-height: 1.2;
-    max-width: 55%;
+    max-width: max(70%, 10em);
   }
   #comments .container {
     grid-template-columns: repeat(3, 1fr);
@@ -424,7 +472,7 @@ footer .contact .info img {
   #get-access .box {
     padding-inline: 5em;
   }
-  #get-access form {
+  #get-access .inner {
     flex-direction: row;
   }
   #get-access .field, #get-access .btn {
