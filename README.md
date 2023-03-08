@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [here]([https://your-solution-url.com](https://github.com/rafaeldevvv/fylo-dark-theme))
+- Solution URL: [here](https://github.com/rafaeldevvv/fylo-dark-theme)
 - Live Site URL: [here](https://rafaeldevvv.github.io/fylo-dark-theme/)
 
 ## My process
