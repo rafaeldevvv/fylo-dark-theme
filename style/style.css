@@ -437,6 +437,9 @@ footer .contact .info img {
   header .logo {
     width: 140px;
   }
+  nav ul a {
+    font-size: 1.2em;
+  }
   #intro {
     background-image: url("../images/bg-curvy-desktop.svg");
     background-color: hsl(217, 28%, 15%);
